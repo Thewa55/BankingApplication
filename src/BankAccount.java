@@ -40,6 +40,11 @@ public class BankAccount {
         }
     }
 
+    void addAccount(){
+        Scanner keyboard = new Scanner(System.in);
+
+    }
+
     void getMenu(){
         char choice = '\0';
         Scanner keyboard = new Scanner(System.in);
@@ -86,6 +91,6 @@ public class BankAccount {
                     break;
             }
         } while (choice != 'E');
-        System.out.println("Thank you for using the banking app");
+//        System.out.println("");
     }
 }
