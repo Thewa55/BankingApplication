@@ -8,11 +8,11 @@ public class BankingApplication {
         ArrayList<BankAccount> bankAccounts = new ArrayList<BankAccount>();
         char option = '\0';
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Welcome to Kenny's bank");
-        System.out.println("A. Add an account");
-        System.out.println("B. View an account");
-        System.out.println("C. Exit");
         do {
+            System.out.println("Welcome to Kenny's bank");
+            System.out.println("A. Add an account");
+            System.out.println("B. View an account");
+            System.out.println("C. Exit");
             System.out.println("What would you like to do?");
             option = keyboard.next().charAt(0);
             switch (option) {
@@ -26,8 +26,11 @@ public class BankingApplication {
                     break;
                 case 'B':
                     if(bankAccounts.size() > 0){
+                        int index = 1;
+                        System.out.println("Here are the customers:");
                         for(BankAccount bankAccount: bankAccounts){
-                            System.out.println(bankAccount.customerName + " --- " + bankAccount.customerId);
+                            System.out.println(index+") "+bankAccount.customerName + " --- " + bankAccount.customerId);
+                            index++;
                         }
                     } else {
                         System.out.println("There are currently no accounts");
