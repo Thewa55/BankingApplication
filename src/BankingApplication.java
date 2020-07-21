@@ -18,7 +18,8 @@ public class BankingApplication {
             switch (option) {
                 case 'A':
                     System.out.println("What is the customer's name?");
-                    customerN = keyboard.next();
+                    Scanner name = new Scanner(System.in);
+                    customerN = name.nextLine();
                     System.out.println("What is the customer's ID?");
                     customerI = keyboard.next();
                     BankAccount account1 = new BankAccount(customerN, customerI);
@@ -55,9 +56,6 @@ public class BankingApplication {
                 default:
                     System.out.println("Please enter a valid choice");
                     break;
-
-//            BankAccount account1 = new BankAccount("XYZ", "BA001");
-//            account1.getMenu();
             }
         }while (option != 'C');
         System.out.println("Thank you for using Kenny's bank");

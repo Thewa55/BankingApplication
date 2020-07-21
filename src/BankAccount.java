@@ -23,7 +23,7 @@ public class BankAccount {
             if(balance - amount > 0){
                 balance = balance - amount;
                 previousBalance = -amount;
-                System.out.println("Withdrawn successfully");
+                System.out.println("You have withdrawn $"+amount+". You current have $"+balance+" left in your account." );
             } else {
                 System.out.println("You've over withdrawn, withdraw canceled");
             }
@@ -62,7 +62,7 @@ public class BankAccount {
             switch (choice){
                 case 'A':
                     System.out.println("----------------------");
-                    System.out.println("Your current balance is "+balance);
+                    System.out.println("Your current balance is $"+balance);
                     System.out.println("----------------------");
                     break;
                 case 'B' :
