@@ -51,15 +51,14 @@ public class BankAccount {
         System.out.println("Welcome "+customerName);
         System.out.println("Your ID is "+customerId);
         System.out.println("\n");
-        System.out.println("A. Check Balance");
-        System.out.println("B. Deposit");
-        System.out.println("C. Withdraw");
-        System.out.println("D. Previous transaction");
-        System.out.println("E. Exit");
         do{
+            System.out.println("A. Check Balance");
+            System.out.println("B. Deposit");
+            System.out.println("C. Withdraw");
+            System.out.println("D. Previous transaction");
+            System.out.println("E. Exit");
             System.out.println("Please enter a choice");
             choice = keyboard.next().charAt(0);
-            System.out.println("\n");
             switch (choice){
                 case 'A':
                     System.out.println("----------------------");
@@ -81,7 +80,7 @@ public class BankAccount {
                     break;
                 case 'D':
                     System.out.println("----------------------");
-                    System.out.println("How much would you like to withdraw?");
+                    getPreviousBalance();
                     break;
                 case 'E':
                     System.out.println("---------------------");

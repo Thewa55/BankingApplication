@@ -32,6 +32,20 @@ public class BankingApplication {
                             System.out.println(index+") "+bankAccount.customerName + " --- " + bankAccount.customerId);
                             index++;
                         }
+                        System.out.println(index+") Exit");
+                        if(keyboard.hasNextInt()){
+                            int customerSelected = keyboard.nextInt();
+                            if(customerSelected -1 < bankAccounts.size() && customerSelected > 0){
+                                bankAccounts.get(customerSelected-1).getMenu();
+                            } else if (customerSelected == index){
+                                break;
+                            } else {
+                                System.out.println("Invalid option");
+                            }
+                        } else {
+                            System.out.println("Please enter a valid option");
+                            keyboard.next();
+                        }
                     } else {
                         System.out.println("There are currently no accounts");
                     }
