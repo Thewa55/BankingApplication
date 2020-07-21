@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class BankAccount {
     int balance;
     int previousBalance;
@@ -21,8 +23,9 @@ public class BankAccount {
             if(balance - amount > 0){
                 balance = balance - amount;
                 previousBalance = -amount;
+                System.out.println("Withdrawn successfully");
             } else {
-                System.out.println("You've over withdrawn");
+                System.out.println("You've over withdrawn, withdraw canceled");
             }
         }
     }
@@ -35,5 +38,54 @@ public class BankAccount {
         } else{
             System.out.println("No transaction recorded.");
         }
+    }
+
+    void getMenu(){
+        char choice = '\0';
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Welcome "+customerName);
+        System.out.println("Your ID is "+customerId);
+        System.out.println("\n");
+        System.out.println("A. Check Balance");
+        System.out.println("B. Deposit");
+        System.out.println("C. Withdraw");
+        System.out.println("D. Previous transaction");
+        System.out.println("E. Exit");
+        do{
+            System.out.println("Please enter a choice");
+            choice = keyboard.next().charAt(0);
+            System.out.println("\n");
+            switch (choice){
+                case 'A':
+                    System.out.println("----------------------");
+                    System.out.println("Your current balance is "+balance);
+                    System.out.println("----------------------");
+                    break;
+                case 'B' :
+                    System.out.println("----------------------");
+                    System.out.println("How much would you like to deposit?");
+                    int amount2 = keyboard.nextInt();
+                    deposit(amount2);
+                    System.out.println("$"+amount2+ " has been deposited");
+                    break;
+                case 'C':
+                    System.out.println("----------------------");
+                    System.out.println("How much would you like to withdraw?");
+                    amount2 = keyboard.nextInt();
+                    withdraw(amount2);
+                    break;
+                case 'D':
+                    System.out.println("----------------------");
+                    System.out.println("How much would you like to withdraw?");
+                    break;
+                case 'E':
+                    System.out.println("---------------------");
+                    break;
+                default:
+                    System.out.println("Invalid option, please input a valid option");
+                    break;
+            }
+        } while (choice != 'E');
+        System.out.println("Thank you for using the banking app");
     }
 }
